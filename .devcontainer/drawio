@@ -1,0 +1,6 @@
+#!/bin/sh
+
+# Xvfb supplies a display for CLI exports. Electron's sandbox requires
+# privileges that are unavailable in a standard dev container.
+export DRAWIO_DISABLE_UPDATE=true
+exec xvfb-run -a /usr/bin/drawio --no-sandbox "$@"
